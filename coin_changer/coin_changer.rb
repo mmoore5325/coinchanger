@@ -1,22 +1,30 @@
 require "minitest/autorun"
 require_relative "changefunction.rb"
 
-class TestChangeFunction < Minitest::Test
-
+class TestCoinChanger < Minitest::Test
+	
 	def test_0_cents_returns_empty_hash
-		cents_received = 0
-		assert_equal({}, coin_changer(cents_received))
+		assert_equal({}, coin_changer(0))
 	end
 
-	def test_one_cent_is_one_penny
-		cents_received = 1
-		assert_equal({:penny => 1}, coin_changer(cents_received))
+	def test_1_cent_equals_1_penny
+		cents = 1
+		assert_equal({:penny => 1}, coin_changer(cents))
 	end
 
-	# def test_six_cents_equals_one_nickel_and_one_penny
-	# 	cents_received = 6
-	# 	assert_equal({:penny => 1, :nickel => 5})
+	def test_two_cents_returns_two_pennys
+		cents = 2
+		assert_equal({:penny => 2}, coin_changer(cents))
+	end
+
+	def test_five_cents_returns_one_nickle
+		cents = 5
+		assert_equal({:nickle => 1}, coin_changer(cents))
+	end
+
+	# def test_six_cents_returns_one_and_one
+	# 	cents = 6
+	# 	assert_equal({:nickle => 1, :penny =>1}, coin_changer(cents))
 	# end
-
+	
 end
-
