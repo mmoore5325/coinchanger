@@ -15,7 +15,8 @@ class TestChangeFunction < Minitest::Test
 
 	# def test_six_cents_equals_one_nickel_and_one_penny
 	# 	cents_received = 6
-	# 	assert_equal({:penny => 1, nickel => 1})
+	# 	assert_equal({:penny => 1, :nickel => 5})
+	# end
 
 end
 
