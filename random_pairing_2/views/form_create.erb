@@ -1,8 +1,8 @@
 Show me students.
-<form method = "post" action = "/number">
-<input type = "hidden" name = "students" value = <%=students%>>
+<form method = "post" action = "/number_of_forms">
+
 <%students.to_i.times do%>
-<input type = "text" name = "num_students[]">
+<input type = "text" name = "num_forms[]">
 <%end%>
 <input type = "submit">
 </form>

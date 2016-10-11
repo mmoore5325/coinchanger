@@ -1,4 +1,6 @@
 require 'sinatra'
+require_relative 'random_pair.rb'
+require_relative 'formatter.rb'
 
  
 
@@ -10,11 +12,11 @@ post '/get_number' do
 
 	students = params[:students]
 
-	redirect '/number?students=' + students
+	redirect '/number_of_forms?students=' + students
 		
 end
 
-get '/number' do
+get '/number_of_forms' do
 
 	students = params[:students]
 
@@ -22,11 +24,17 @@ get '/number' do
 	
 end
 
-post '/number' do
-	students = params[:students]
-	num_students = params[:num_students]
+post '/number_of_forms' do
+	
+	num_forms = params[:num_forms]
+	random = randomizer(num_forms)
+	fixed = fix(random)
+	erb :post_names, :locals => {:fixed => fix}
 
 end
+
+
+
 
 
 
