@@ -27,9 +27,9 @@ end
 post '/number_of_forms' do
 	
 	num_forms = params[:num_forms]
-	random = randomizer(num_forms)
-	fixed = fix(random)
-	erb :post_names, :locals => {:fixed => fix}
+	random = random_pair(num_forms)
+	
+	erb :post_names, :locals => {:random => random}
 
 end
 

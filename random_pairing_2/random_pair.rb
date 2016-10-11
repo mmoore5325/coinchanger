@@ -1,4 +1,11 @@
 # ["lyle", "jacob", "jeremy", "ysabele", "lotfi", "cyndi", "don", "stephanie", "susan", "adam", "mike", "maxx", "john"]
+def random_pair(names)
+    random = capital(names)
+    random1 = randomizer(random)
+    random2 = fix(random1)
+    random2
+end
+
 
 def randomizer(names)
     
@@ -11,4 +18,20 @@ def randomizer(names)
     else
         sliced
     end
+end
+
+def fix(names)
+    group = ""
+    names.each do |pair|
+        if pair.include? (pair[2])
+            group << pair[0] + ", " + pair[1] + ", and " + pair[2] + "<br>"
+        else
+            group << pair[0] + " and " + pair[1] + "<br>"
+        end
+    end
+    group
+end
+
+def capital(name)
+    capital = name.map(&:capitalize)
 end
